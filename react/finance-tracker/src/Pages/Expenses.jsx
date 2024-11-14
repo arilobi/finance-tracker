@@ -7,40 +7,37 @@ const Expenses = () => {
   const [expenses, setExpenses] = useState([]);
   const { isDarkMode } = useContext(ThemeContext);
 
-  // Function to fetch data from the server endpoint
   useEffect(() => {
-    fetch('http://localhost:3000/transactions') 
+    // Fetch data from db.json to display in the Expenses component
+    fetch("http://localhost:3000/transactions")
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error("Failed to fetch data");
         }
         return response.json();
       })
       .then((data) => {
-        setExpenses(data || []); // Update state with fetched data
+        setExpenses(data || []);
       })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const expenseStyles = {
-    backgroundColor: isDarkMode ? " #333" : "#fff",
-    color: isDarkMode ? " #fff" : "#000"
-};
-
+    backgroundColor: isDarkMode ? "#333" : "#fff",
+    color: isDarkMode ? "#fff" : "#000",
+  };
 
   return (
     <div class="expense-cls" style={expenseStyles}>
-        <img src={expensephoto} alt="a calculator" class="expense-img" />
+      <img src={expensephoto} alt="a calculator" class="expense-img" />
       <h2>Expenses</h2>
-      <table className={isDarkMode ? 'table-dark' : 'table-light'}>
+      <table className={`expense-table ${isDarkMode ? "table-dark" : "table-light"}`} >
         <thead>
           <tr>
             <th>Date</th>
             <th>Name</th>
             <th>Category</th>
-            <th class="amount-header">Amount</th>
+            <th>Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +46,7 @@ const Expenses = () => {
               <td>{expense.date}</td>
               <td>{expense.description}</td>
               <td>{expense.category}</td>
-              <td class="amount-expense">{expense.amount}</td>
+              <td>{expense.amount}</td>
             </tr>
           ))}
         </tbody>
@@ -58,4 +55,4 @@ const Expenses = () => {
   );
 };
 
-export default Expenses;
+export default Expenses;

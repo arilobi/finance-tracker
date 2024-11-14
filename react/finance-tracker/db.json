@@ -41,7 +41,15 @@
         "description": "Fuel",
         "category": "Other",
         "amount": 2300 
-      }
-      
-    ]
+      } 
+    ],
+    "budgets": [
+      {
+        "id": 1,
+        "category": "Food",
+        "budgetedAmount": 2000,
+        "spentAmount": 1500
+  }
+  ]
+  
 }

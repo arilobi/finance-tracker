@@ -1,39 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import reports from "../assets/images/reports.png";
+import { ThemeContext } from './ThemeContext';
+import { useContext } from 'react';
 
-const Report = ({ expenses, budget }) => {
-  const [monthlyReport, setMonthlyReport] = useState([]);
+const Report = () => {
+  const { isDarkMode } = useContext(ThemeContext);
 
-  // Calculate report whenever expenses or budget change
-  useEffect(() => {
-    const report = calculateReport(expenses, budget);
-    setMonthlyReport(report);
-  }, [expenses, budget]);
-
-  // monthly report
-  const calculateReport = (expenses, budget) => {
-    const report = {};
-    
-    // Group expenses by month
-    expenses.forEach((expense) => {
-      const month = new Date(expense.date).toLocaleString('default', { month: 'long' });
-      if (!report[month]) {
-        report[month] = { totalSpendings: 0, overBudget: false };
-      }
-      report[month].totalSpendings += parseFloat(expense.amount);
-    });
-
-    // Checking if spendings are over budget
-    return Object.keys(report).map((month) => ({
-      month,
-      totalSpendings: report[month].totalSpendings,
-      overBudget: report[month].totalSpendings > budget,
-    }));
-  };
-
+  const reportStyles = {
+    backgroundColor: isDarkMode ? " #333" : "#fff",
+    color: isDarkMode ? " #fff" : "#000"
+};
   return (
-    <div className="report-container">
-      <h2>Monthly Report</h2>
-      <table className="report-table">
+    <div class="report-cls" style={reportStyles}>
+      <div>
+        <img src={reports} alt="graph" class="report-img" />
+      </div>
+      <h2>Report</h2>
+      <table className={`report-table ${isDarkMode ? "table-dark" : "table-light"}`}>
         <thead>
           <tr>
             <th>Month</th>
@@ -42,13 +25,22 @@ const Report = ({ expenses, budget }) => {
           </tr>
         </thead>
         <tbody>
-          {monthlyReport.map((report, index) => (
-            <tr key={index}>
-              <td>{report.month}</td>
-              <td>${report.totalSpendings.toFixed(2)}</td>
-              <td>{report.overBudget ? 'Yes' : 'No'}</td>
-            </tr>
-          ))}
+          {/* Empty rows */}
+          <tr>
+            <td>November</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>December</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>January</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -64,6 +64,191 @@ body {
   margin-bottom: 20px;
 }
 
+.report-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.budget-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.budget-cls {
+    background-color: #333; 
+    color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+ }
+
+.report-cls {
+   background-color: #333; 
+   color: #fff; 
+   display: flex; 
+   flex-direction: column; 
+   align-items: center;
+}
+
+.report-cls h2{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+/* BUDGET PAGE */
+.budget-cls h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.form-budget { 
+  width: 100%; 
+  max-width: 600px; 
+  margin-bottom: 20px; 
+} 
+
+.budget-container { 
+  display: flex; 
+  justify-content: center;
+   margin-top: 20px; 
+}
+
+.btn-budget {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+}
+
+.budget-cls h3 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+table {
+   width: 100%; 
+   border-collapse: collapse; 
+   margin-bottom: 20px; 
+} 
+
+th, td { 
+  padding: 12px; text-align: 
+  left; border-bottom: 1px solid #ddd;
+} 
+
+th {
+   background-color: #f4f4f4; 
+   font-weight: bold; 
+} 
+
+tr:nth-child(even) { 
+  background-color: #f9f9f9; 
+} 
+
+tr:hover { 
+  background-color: #f1f1f1;
+} 
+
+td:nth-child(3) { 
+  text-align: right; 
+} 
+
+/* Dark mode styles */
+ .table-dark th { 
+  background-color: #333; 
+  border-bottom: 1px solid #444; 
+} 
+
+.table-dark tr:nth-child(even) { 
+  background-color: #555;
+} 
+
+.table-dark tr:hover { 
+  background-color: #444;
+} 
+
+input { 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px; 
+  padding: 10px; 
+  margin: 5px 0;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+} 
+
+/* Dark mode input styling */ 
+.table-dark input { 
+  background-color: #444; 
+  color: #fff; 
+  border: 1px solid #555; 
+}
+
+button { 
+  padding: 10px 20px; 
+  background-color: #5F7F98; 
+  border: none; 
+  color: white; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 5px;
+} 
+
+button:hover { 
+  background-color: #6f8da4; 
+}
+
+
+/* END OF BUDGET PAGE */
+
+/* REPORTS PAGE */
+table { 
+   width: 100%;
+   max-width: 600px; 
+   border-collapse: collapse;
+   margin: 20px 0;
+} 
+
+th, td { 
+  padding: 12px; 
+  text-align: left; 
+  font-family: 'Times New Roman', Times, serif;
+} 
+
+th { 
+  background-color: #f4f4f4; 
+  font-weight: bold; 
+  font-family: 'Times New Roman', Times, serif;
+} 
+
+tr:nth-child(even) { 
+  background-color: #f9f9f9; 
+}
+
+tr:hover { 
+  background-color: #f1f1f1;
+} 
+
+td:nth-child(3) { 
+  text-align: right; 
+} 
+
+/* Dark mode styles */ 
+
+.table-dark th { 
+  background-color: #333; 
+  border-bottom: 1px solid #444; 
+} 
+
+.table-dark tr:nth-child(even) { 
+  background-color: #555; 
+} 
+
+.table-dark tr:hover { 
+  background-color: #444; 
+}
+
+/* END OF REPORTS PAGE */
+
 .settings-app {
   text-align: center;
 }
@@ -165,10 +350,24 @@ body {
   background-color: #5F7F98;
 }
 
+.expense-cls {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+   min-height: 100vh; 
+}
+
+.expense-table {
+  margin: 20px 0;
+}
+
 .expense-cls h2 {
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
+
+/* EXPENSES PAGE */
 
 /* For light mode */
 .table-light {
@@ -240,6 +439,22 @@ th.amount-header {
   text-align: right;
 }
 
+/* END OF EXPENSE PAGE */
+
+/* Default style for light mode */
+.table-light {
+  color: black; /* Text color in light mode */
+}
+
+/* Style for dark mode */
+.table-dark {
+  color: white; /* Text color in dark mode */
+}
+
+/* Utility to switch between modes */
+body.dark-mode .table-light {
+  color: white; /* Text color in dark mode */
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
