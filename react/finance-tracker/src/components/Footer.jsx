@@ -19,6 +19,7 @@ export default function Footer() {
     };
 
     return (
+        // passing the footerStyles so that it renders it to what we want.
         <div class="footer" style={footerStyles}>
             <Link to="/Dashboard">Home</Link>
         </div>
