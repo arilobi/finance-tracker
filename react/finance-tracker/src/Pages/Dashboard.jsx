@@ -1,15 +1,22 @@
 import TransactionForm from "../components/TransactionForm";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./ThemeContext"
 
 export default function Dashboard() {
-    const [transactions, setTransactions] = useState([])
+    const [transactions, setTransactions] = useState([]);
+    const { isDarkMode } = useContext(ThemeContext);
 
     const handleAddTransaction = (newTransaction) => {
         setTransactions([...transactions, newTransaction])
     };
 
+    const dashboardStyles = {
+        backgroundColor: isDarkMode ? "#333" : "fff",
+        color: isDarkMode ? "#fff" : " #000"
+    };
+
     return (
-        <div>
+        <div style={dashboardStyles}>
             <TransactionForm onAddTransaction={handleAddTransaction} />
             <ul>
                 {transactions.map((transaction) => (

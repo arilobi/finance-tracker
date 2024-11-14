@@ -6,6 +6,8 @@ import Dashboard from './Pages/Dashboard';
 import Layout from './components/Layout'
 import Settings from './Pages/Settings';
 import TransactionForm from './components/TransactionForm';
+import Expenses from './Pages/Expenses';
+import Sidebar from './components/Sidebar';
 
 
 function App() {
@@ -16,9 +18,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="transactionform" element={<TransactionForm />} />
+          <Route index element={<TransactionForm />} />
+          <Route path="Settings" element={<Settings />} />
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Expenses" element={<Expenses />} />
+          <Route path="Sidebar" element={<Sidebar />} />
+          {/* <Route path="Report" element={<Report />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
