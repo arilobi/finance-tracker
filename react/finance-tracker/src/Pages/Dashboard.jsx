@@ -18,14 +18,12 @@ export default function Dashboard() {
     return (
         <div style={dashboardStyles}>
             <TransactionForm onAddTransaction={handleAddTransaction} />
-            <ul>
+            <ul class="unordered">
                 {transactions.map((transaction) => (
-                    <li key={transaction.id}>
-                        {transaction.name}
-                        {transaction.date}
-                        KES{transaction.amount}
-                        {transaction.transactionType}
-                    </li>
+                   <li key={transaction.id}>
+                   {transaction.name} - {transaction.date} - KES{transaction.amount} - {transaction.transactionType}
+               </li>
+
                 ))}
             </ul>
         </div>

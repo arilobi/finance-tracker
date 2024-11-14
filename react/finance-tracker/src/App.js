@@ -11,7 +11,6 @@ import Sidebar from './components/Sidebar';
 import Report from './Pages/Report';
 import Budget from './Pages/Budget';
 
-
 function App() {
   const {isDarkMode} = useContext(ThemeContext);
 

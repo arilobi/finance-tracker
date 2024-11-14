@@ -14,8 +14,6 @@ export default function Footer() {
     return (
         <div class="footer" style={footerStyles}>
             <Link to="/Dashboard">Home</Link>
-            <Link to="/Dashboard">About</Link>
-            <Link to="/Dashboard">Contact us</Link>
         </div>
     );
 }

@@ -92,9 +92,15 @@ body {
    align-items: center;
 }
 
-.report-cls h2{
+.report-cls h2 {
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
+}
+
+/* DASHBOARD */
+.unordered  {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* BUDGET PAGE */
@@ -437,6 +443,26 @@ th.amount-header {
 
 .table-dark td:nth-child(4) {
   text-align: right;
+}
+
+/* DELETE, SAVE, CANCEL AND UPDATE STYLING */
+.edit-btn {
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 20px;
+  padding-right: 35px;
+  text-align: center;
+}
+
+.delete-btn {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.save-btn {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.cancel-btn {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* END OF EXPENSE PAGE */
