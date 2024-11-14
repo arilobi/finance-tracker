@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import TransactionForm from '../components/TransactionForm';
+import expensephoto from "../assets/images/expensephoto.png";
+import { ThemeContext } from './ThemeContext';
+import { useContext } from 'react';
 
 const Expenses = () => {
   const [expenses, setExpenses] = useState([]);
+  const { isDarkMode } = useContext(ThemeContext);
 
   // Function to fetch data from the server endpoint
   useEffect(() => {
@@ -21,29 +24,23 @@ const Expenses = () => {
       });
   }, []);
 
-  const handleAddTransaction = (newTransaction) => { 
-    fetch('http://localhost:3000/api/transactions', {
-         method: 'POST', 
-         headers: { 'Content-Type': 'application/json', }, 
-         body: JSON.stringify(newTransaction), }) 
-         .then(response => response.json()) 
-         .then(data => { // Update state with the new transaction 
-            setExpenses(prevExpenses => [...prevExpenses, data]); })
-             .catch(error => { console.error('Error adding transaction:', error); 
+  const expenseStyles = {
+    backgroundColor: isDarkMode ? " #333" : "#fff",
+    color: isDarkMode ? " #fff" : "#000"
+};
 
-     }); };
 
   return (
-    <div>
+    <div class="expense-cls" style={expenseStyles}>
+        <img src={expensephoto} alt="a calculator" class="expense-img" />
       <h2>Expenses</h2>
-      <TransactionForm onAddTransaction={handleAddTransaction} />
-      <table>
+      <table className={isDarkMode ? 'table-dark' : 'table-light'}>
         <thead>
           <tr>
             <th>Date</th>
             <th>Name</th>
             <th>Category</th>
-            <th>Amount</th>
+            <th class="amount-header">Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -52,7 +49,7 @@ const Expenses = () => {
               <td>{expense.date}</td>
               <td>{expense.description}</td>
               <td>{expense.category}</td>
-              <td>{expense.amount}</td>
+              <td class="amount-expense">{expense.amount}</td>
             </tr>
           ))}
         </tbody>
