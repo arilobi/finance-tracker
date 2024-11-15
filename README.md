@@ -9,11 +9,11 @@ The purpose of our app is to aid users to use it freely to keep record of their 
 
 Before you open our code, make sure to:
 
-### `Make sure to fork and clone it to your terminal`
-### `Open it in VS Code then open your VS Code terminal`
-### `npm install`
-### `Then write json-server --watch db.json`
-### `npm start - to see the code`
+Make sure to fork and clone it to your terminal
+Open it in VS Code then open your VS Code terminal
+npm install
+Then write json-server --watch db.json
+npm start - to see the code
 
 ## Core Features
 
