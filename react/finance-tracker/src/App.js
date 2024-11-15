@@ -7,10 +7,8 @@ import Layout from './components/Layout'
 import Settings from './Pages/Settings';
 import TransactionForm from './components/TransactionForm';
 import Expenses from './Pages/Expenses';
-import Sidebar from './components/Sidebar';
 import Report from './Pages/Report';
 import Budget from './Pages/Budget';
-
 
 function App() {
   const {isDarkMode} = useContext(ThemeContext);
@@ -24,7 +22,6 @@ function App() {
           <Route path="Settings" element={<Settings />} />
           <Route path="Dashboard" element={<Dashboard />} />
           <Route path="Expenses" element={<Expenses />} />
-          <Route path="Sidebar" element={<Sidebar />} />
           <Route path="Report" element={<Report />} />
           <Route path="Budget" element={<Budget />} />
         </Route>
