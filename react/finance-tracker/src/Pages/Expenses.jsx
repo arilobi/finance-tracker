@@ -10,7 +10,7 @@ const Expenses = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
-    fetch("http://localhost:3001/transactions")
+    fetch("http://localhost:3000/transactions")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -24,7 +24,7 @@ const Expenses = () => {
   }, []);
 
   const deleteExpense = (id) => {
-    fetch(`http://localhost:3001/transactions/${id}`, {
+    fetch(`http://localhost:3000/transactions/${id}`, {
       method: "DELETE",
     })
       .then(() => {
@@ -39,7 +39,7 @@ const Expenses = () => {
   };
 
   const updateExpense = (id, updatedExpense) => {
-    fetch(`http://localhost:3001/transactions/${id}`, {
+    fetch(`http://localhost:3000/transactions/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
