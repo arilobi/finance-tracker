@@ -22,7 +22,7 @@ const Budget = () => {
     setBudget('');
 
     // Save the budget to db.json
-    fetch('http://localhost:3000/budgets', {
+    fetch('https://finance-tracker-p1er.onrender.com//budgets', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
