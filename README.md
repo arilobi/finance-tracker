@@ -47,7 +47,7 @@ REACT JS, GIT, RENDER, VERCEL, CSS, JAVASCRIPT
 
 ## Support and contact details
 
-Email:: arinabulobi@gmail.com, 
+Email:: arinabulobi@gmail.com, joebrian998@gmail.com, emmanueltikan@gmail.com
 
 
 
